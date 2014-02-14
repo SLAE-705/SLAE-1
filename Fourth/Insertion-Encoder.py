@@ -13,9 +13,9 @@ print 'Encoded shellcode ...'
 for x in bytearray(shellcode) :
 	encoded += '\\x'
 	encoded += '%02x' % x							#pick a random number of random bytes to be insterted
-	no_of_bytes = random.randint(1,3)				#increase the value for more random bytes to be inserted
+	no_of_bytes = random.randint(1,10)				#increase the value for more random bytes to be inserted
 	encoded += '\\x%02x' % no_of_bytes 				#insert the number that specifies how many rnadom bytes have been inserted after this one
-	list_of_rand_bytes = random.sample(range(255),no_of_bytes) # list of random bytes
+	list_of_rand_bytes = random.sample(range(33,126),no_of_bytes) # list of random bytes (30-126, look at the ASCII Table, only alpha-numeric)
 	for insert_byte in list_of_rand_bytes: 			#insert the random bytes
 		encoded += '\\x%02x' % insert_byte
 
