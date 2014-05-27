@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 
 	encrypted_code = aes_encrypt(&ctx_en, (unsigned char *)code, &len);
 	int i;
-	for(i = 0; i < strlen(encrypted_code); i++)
+	for(i = 0; i < len; i++)
 		printf("\\x%02x", encrypted_code[i]);
 	printf("\nLength:%zu\n", strlen(encrypted_code));
 

@@ -70,9 +70,9 @@ int main(int argc, char **argv)
 	code = (char *)aes_decrypt(&ctx_de, encrypted_code, &len);
 	
         int i;
-        for(i = 0; i < strlen(encrypted_code); i++)
+        for(i = 0; i < len; i++)
                 printf("\\x%02x", code[i]);
-        printf("\nLength:%zu\n", strlen(code));
+        printf("\nLength:%u\n", len);
 
 	//let's run it
 	int (*ret)() = (int(*)())code;
